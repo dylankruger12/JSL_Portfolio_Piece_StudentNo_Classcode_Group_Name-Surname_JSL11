@@ -226,16 +226,23 @@ function toggleSidebar(show) {
 function toggleTheme() {
    const isDarkMode = document.body.classList.toggle('dark-theme');
    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
 }
 
 
 
 function openEditTaskModal(task) {
   // Set task details in modal inputs
+  elements.editTaskModal.querySelector('#edit-task-title').value = task.title;
+  elements.editTaskModal.querySelector('#edit-task-description').value = task.description;
+  elements.editTaskModal.querySelector('#edit-task-status').value = task.status;
+  
   
 
   // Get button elements from the task modal
+  const saveChangesBtn = elements.editTaskModal.querySelector('#save-changes-btn');
+  const deleteChangesBtn = elements.editTaskModal.querySelector('#delete-task-btn');
+  const editChangesBtn = elements.editTaskModal.querySelector('#cancel-edit-btn');
+  
 
 
   // Call saveTaskChanges upon click of Save Changes button
