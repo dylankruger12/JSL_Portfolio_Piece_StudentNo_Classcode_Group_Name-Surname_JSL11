@@ -224,7 +224,9 @@ function toggleSidebar(show) {
 }
 
 function toggleTheme() {
- 
+   const isDarkMode = document.body.classList.toggle('dark-theme');
+   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
 }
 
 
